@@ -1,0 +1,148 @@
+* {
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 50px 10fr 1fr;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer"
+    ;
+    padding: 10px 20%;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+article {
+    margin-top: 5vh;
+}
+
+footer {
+    grid-area: footer;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.movies {
+    display: flex;
+    justify-content: space-between;
+}
+
+.movie {
+    width: 22% !important;
+    margin-top: 20px !important;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+}
+
+.detail {
+    width: 70% !important;
+    margin: 10px !important;
+}
+
+.detail_meta {
+    font-style: italic;
+    font-size: 1.3rem !important;
+}
+
+.detail_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail_title button {
+    visibility: visible;
+}
+
+.detail_title--mobile {
+    display: none;
+}
+
+.search_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Semantic customization */
+.ui.card,
+.ui.cards>.card {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ui.card {
+    border: none !important;
+}
+
+.ui.cards>.card a {
+    color: white !important;
+}
+
+/* Utils */
+.my-no_select {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+@media (max-width: 1024px) {
+    main {
+        padding: 10px 5%;
+    }
+
+    .movie {
+        width: 47% !important;       
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 10px 5%;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .movie {
+        width: 100% !important;       
+    }
+
+    .detail_title button {
+        visibility: hidden;
+    }
+
+    .detail_title--mobile {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .search_title {
+        flex-direction: column;
+    }
+}
